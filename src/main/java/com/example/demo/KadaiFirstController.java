@@ -28,8 +28,11 @@ public class KadaiFirstController {
         // 年・月・日を切り出す + int型に変換
         // 終了位置は最後の文字 +1 で位置を指定する（模様）
         // 終了位置の1つ手前のところまで切り出す（模様）
-        int year =  Integer.parseInt(ymd.substring(0,4));
-        int month = Integer.parseInt(ymd.substring(4,6));
+
+        int year =  (Integer.parseInt(ymd.substring(0,4)));
+
+        // カレンダー型のmonthは0-11のため、-1する（初回提出のとき、書き忘れた）
+        int month = Integer.parseInt(ymd.substring(4,6))-1;
 
         // 末尾から取得するときはこう書く（らしい）
         int date = Integer.parseInt(ymd.substring(ymd.length()-2));
